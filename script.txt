@@ -1,0 +1,22 @@
+local plrs = cloneref(game:GetService("Players"))
+local localplr = plrs.LocalPlayer
+local char = localplr.Character
+local hum = char:WaitForChild("Humanoid")
+local screenGui = Instance.new("ScreenGui", localplr:WaitForChild("PlayerGui"))
+local textLabel = Instance.new("TextLabel", screenGui)
+textLabel.Size = UDim2.new(0, 100, 0, 50)
+textLabel.Position = UDim2.new(0.5, -50, 0.5, -25)
+textLabel.Text = "crashed by toyota93"
+textLabel.TextColor3 = Color3.new(1, 1, 1) -- White color
+textLabel.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+textLabel.BackgroundTransparency = 0.5 -- Semi-transparent background
+textLabel.TextScaled = true
+
+local anim = Instance.new("Animation", char)
+anim.AnimationId = "rbxassetid://84315373"
+
+local track = hum:LoadAnimation(anim)
+track:Play()
+
+task.wait(3)
+game:Shutdown()
